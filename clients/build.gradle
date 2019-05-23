@@ -26,7 +26,7 @@ dependencies {
 }
 
 springBoot {
-    mainClassName = "com.template.webserver.Server"
+    mainClassName = "webserver.Server"
 }
 
 task runTemplateClient(type: JavaExec, dependsOn: assemble) {
@@ -37,6 +37,6 @@ task runTemplateClient(type: JavaExec, dependsOn: assemble) {
 
 task runTemplateServer(type: JavaExec, dependsOn: assemble) {
     classpath = sourceSets.main.runtimeClasspath
-    main = 'com.template.webserver.Starter'
+    main = 'webserver.Starter'
     args '--server.port=10050', '--config.rpc.host=localhost', '--config.rpc.port=10006', '--config.rpc.username=user1', '--config.rpc.password=test'
 }
